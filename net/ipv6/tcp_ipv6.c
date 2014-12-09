@@ -924,7 +924,6 @@ static void tcp_v6_reqsk_send_ack(struct sock *sk, struct sk_buff *skb,
 			tcp_v6_md5_do_lookup(sk, &ipv6_hdr(skb)->daddr), 0);
 }
 
-
 static struct sock *tcp_v6_hnd_req(struct sock *sk,struct sk_buff *skb)
 {
 	struct request_sock *req, **prev;
