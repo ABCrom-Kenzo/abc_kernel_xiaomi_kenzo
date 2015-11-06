@@ -196,4 +196,6 @@ void __init kasan_init(void)
 	memset(kasan_zero_page, 0, PAGE_SIZE);
 
 	load_cr3(init_level4_pgt);
+
+	pr_info("KernelAddressSanitizer initialized\n");
 }
