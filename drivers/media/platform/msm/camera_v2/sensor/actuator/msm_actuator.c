@@ -1501,7 +1501,7 @@ static int32_t msm_actuator_config(struct msm_actuator_ctrl_t *a_ctrl,
 
 	case CFG_SET_DEFAULT_FOCUS:
 		if (a_ctrl->func_tbl &&
-			a_ctrl->func_tbl->actuator_set_default_focus)
+			a_ctrl->func_tbl->actuator_set_default_focus) {
 			rc = a_ctrl->func_tbl->actuator_set_default_focus(
 				a_ctrl, &cdata->cfg.move);
 		if (rc < 0)
@@ -1513,7 +1513,7 @@ static int32_t msm_actuator_config(struct msm_actuator_ctrl_t *a_ctrl,
 
 	case CFG_MOVE_FOCUS:
 		if (a_ctrl->func_tbl &&
-			a_ctrl->func_tbl->actuator_move_focus)
+			a_ctrl->func_tbl->actuator_move_focus) {
 			rc = a_ctrl->func_tbl->actuator_move_focus(a_ctrl,
 				&cdata->cfg.move);
 		if (rc < 0)
