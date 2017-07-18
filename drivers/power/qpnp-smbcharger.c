@@ -5691,7 +5691,6 @@ exit:
 }
 
 #if defined(CONFIG_BOARDTEMP_WORK)
-#define DEFAULT_TEMP		250
 static int lct_get_prop_batt_temp(struct smbchg_chip *chip)
 {
 	int rc = 0;
