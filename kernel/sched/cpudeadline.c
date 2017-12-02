@@ -30,11 +30,6 @@ static inline int right_child(int i)
 	return (i << 1) + 2;
 }
 
-static inline int dl_time_before(u64 a, u64 b)
-{
-	return (s64)(a - b) < 0;
-}
-
 static void cpudl_exchange(struct cpudl *cp, int a, int b)
 {
 	int cpu_a = cp->elements[a].cpu, cpu_b = cp->elements[b].cpu;
@@ -169,7 +164,7 @@ void cpudl_set(struct cpudl *cp, int cpu, u64 dl, int is_valid)
 
 	if (old_idx == IDX_INVALID) {
 		cp->size++;
-		cp->elements[cp->size - 1].dl = 0;
+		cp->elements[cp->size - 1].dl = dl;
 		cp->elements[cp->size - 1].cpu = cpu;
 		cp->cpu_to_idx[cpu] = cp->size - 1;
 		cpudl_change_key(cp, cp->size - 1, dl);
